@@ -7,17 +7,20 @@ beforeEach(() => {
   component = render(<Counter />);
 });
 
+
 test('renders counter message', () => {
   const { getByText } = component;
   const counterMessage = getByText('Counter');
   expect(counterMessage).toBeInTheDocument();
 });
 
+
 test('should render initial count with value of 0', () => {
   const { getByTestId } = component;
   const counterValue = getByTestId('count');
   expect(counterValue).toHaveTextContent('0');
 });
+
 
 test('clicking + increments the count', () => {
   const { getByText, getByTestId } = component;
@@ -26,6 +29,7 @@ test('clicking + increments the count', () => {
   const counterValue = getByTestId('count');
   expect(counterValue).toHaveTextContent('1');
 });
+
 
 test('clicking - decrements the count', () => {
   const { getByText, getByTestId } = component;
